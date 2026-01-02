@@ -10,8 +10,8 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Set environment variables for Rust
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# Install espup using cargo
-RUN cargo install espup
+# Install espup & ldproxy using cargo
+RUN cargo install espup ldproxy
 
 # Install the ESP toolchain for esp32
 RUN espup install
