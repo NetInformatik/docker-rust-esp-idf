@@ -1,8 +1,8 @@
 # Use the official Ubuntu Noble (24.04 LTS) image as a base
 FROM ubuntu:noble-20251013@sha256:c35e29c9450151419d9448b0fd75374fec4fff364a27f176fb458d472dfc9e54
 
-# Install espup dependencies
-RUN apt-get update && apt-get install -y gcc build-essential curl pkg-config
+# Install dependencies
+RUN apt-get update && apt-get install -y gcc build-essential curl pkg-config git
 
 # Install rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
