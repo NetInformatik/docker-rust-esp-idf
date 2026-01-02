@@ -2,7 +2,7 @@
 FROM ubuntu:noble-20251013@sha256:c35e29c9450151419d9448b0fd75374fec4fff364a27f176fb458d472dfc9e54
 
 # Install dependencies
-RUN apt-get update && apt-get install -y gcc build-essential curl pkg-config git
+RUN apt-get update && apt-get install -y gcc build-essential curl pkg-config git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 
 # Install rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
