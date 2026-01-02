@@ -11,7 +11,10 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
 # Install espup & ldproxy using cargo
-RUN cargo install espup ldproxy
+RUN cargo install espup ldproxy cargo-binutils
+
+# Add llvm-tools component for Rust
+RUN rustup component add llvm-tools
 
 # Install the ESP toolchain for esp32
 RUN espup install
