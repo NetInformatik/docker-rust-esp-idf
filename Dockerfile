@@ -10,8 +10,8 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Set environment variables for Rust
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# Install espup & ldproxy using cargo
-RUN cargo install espup ldproxy cargo-binutils
+# Install espup, ldproxy, cargo-binutils, and the espflash tools using cargo
+RUN cargo install espup ldproxy cargo-binutils cargo-espflash espflash
 
 # Add llvm-tools component for Rust
 RUN rustup component add llvm-tools
